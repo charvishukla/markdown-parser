@@ -17,7 +17,7 @@ public class MarkdownParseTest {
         ArrayList<String> expectedList = new ArrayList<String>();
         expectedList.add("https://something.com");
         expectedList.add("some-thing.html");
-        assertEquals(expectedList,MarkdownParse.getLinksNew(content));
+        assertEquals(expectedList,MarkdownParse.getLinks(content));
     }
     @Test
     public void testGetLinksFile2() throws IOException{
@@ -26,7 +26,7 @@ public class MarkdownParseTest {
         ArrayList<String> expectedList = new ArrayList<String>();
         expectedList.add("https://google.com");
         expectedList.add("google.html");
-        assertEquals(expectedList,MarkdownParse.getLinksNew(content));
+        assertEquals(expectedList,MarkdownParse.getLinks(content));
     }
     @Test
     public void testGetLinksFile3() throws IOException{
@@ -36,7 +36,7 @@ public class MarkdownParseTest {
         if(content.length() == 0){
             assertEquals(null,null);
         }
-        assertEquals(null,MarkdownParse.getLinksNew(content));
+        assertEquals(null,MarkdownParse.getLinks(content));
     }
 
     @Test
@@ -46,7 +46,7 @@ public class MarkdownParseTest {
         ArrayList<String> expectedList = new ArrayList<String>();
         expectedList.add("https://instagram.com"); 
         expectedList.add("https://twitter.com");
-        assertEquals(null,MarkdownParse.getLinksNew(content));
+        assertEquals(null,MarkdownParse.getLinks(content));
 
     }
 
@@ -57,7 +57,7 @@ public class MarkdownParseTest {
         ArrayList<String> expectedList = new ArrayList<String>();
         expectedList.add("google.com"); 
         expectedList.add("twitter.com");
-        assertEquals(null,MarkdownParse.getLinksNew(content));
+        assertEquals(null,MarkdownParse.getLinks(content));
 
     }
 }
