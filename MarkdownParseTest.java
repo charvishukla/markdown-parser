@@ -56,8 +56,8 @@ public class MarkdownParseTest {
         String content = Files.readString(fileName);
         ArrayList<String> expectedList = new ArrayList<String>();
         expectedList.add("google.com"); 
-        expectedList.add("twitter.com");
-        assertEquals(null,MarkdownParse.getLinks(content));
+        
+        assertEquals(expectedList ,MarkdownParse.getLinks(content));
 
     }
 }
